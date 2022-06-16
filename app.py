@@ -20,6 +20,13 @@ def load_some_stuff():
     content = r.json()
     # if you want to just filter the content that comes back
     thing = filter(lambda stuff: stuff["some_property"] == "something" and  stuff["some_other_thing"] == "something_else")
+
+    # think you can write it like this too
+    thing = filter(lambda thingy: thingy["name"] == "Taylor", content)
+
+    # map works the same way
+    thing = map(lambda thingy: thingy["name"] == "Taylor", content)
+
     return list(thing)
 
 def do_some_terminal_thing(package):
