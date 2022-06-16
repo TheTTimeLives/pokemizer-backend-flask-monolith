@@ -30,6 +30,9 @@ def do_some_terminal_thing(package):
         # should be 0 if all good
         app.logger.info(f"Failed to download {package}")
 
+def some_random_function(returning_me):
+    return returning_me
+
 # setup some route handling
 @app.route('/api/test', methods=['POST'])
 def return_something():
