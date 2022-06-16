@@ -1,6 +1,5 @@
 import json
-import flask import Flask, request, jsonify
-from packageurl import PackageUrl
+from flask import Flask, request, jsonify
 import subprocess
 import os
 import requests
@@ -39,7 +38,7 @@ def return_something():
     # grab content
     content = request.json
     # just returning something here
-    return jsonify("done": "success")
+    return jsonify({"done": "success"})
 
 # How you do classes
 class SomeReusableThing:
