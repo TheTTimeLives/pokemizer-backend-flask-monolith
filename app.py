@@ -3,6 +3,9 @@ from flask import Flask, request, jsonify
 import subprocess
 import os
 import requests
+# how you do debugging in python
+# import pdb
+# pdb.set_trace()
 
 app = Flask(__name__)
 port = os.getenv("PORT", 3005)
