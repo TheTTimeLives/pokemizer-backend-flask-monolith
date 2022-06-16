@@ -1,10 +1,12 @@
 import unittest
-from server import some_random_function
+from app import some_random_function
 
 class TestCase:
     def __init__(self, case, expected_match):
         self.case = case
-        self.expected_match = expected_match
+        self.exp
+        
+        ected_match = expected_match
 
 class MyTestCase(unittest.TestCase):
     def do_some_testing(self):
