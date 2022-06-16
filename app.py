@@ -32,6 +32,11 @@ def load_some_stuff():
 
     return list(thing)
 
+# how you do async stuff
+# async def some_async_thing():
+#     r = await requests.get("https://google.com", auth={auth_thing}, verify=False, headers=headers)
+#     return r.json()
+
 def do_some_terminal_thing(package):
     # an example of how to install things
     result = subprocess.run(["npm", "install", package])
