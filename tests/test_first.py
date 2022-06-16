@@ -2,6 +2,9 @@ from unittest import TestCase
 import json
 import pprint
 
+# run with python -m unitttest file_name.py for just this file
+# run with python -m unittest discover to discover all files prefixed with test and run them
+
 whatever_data = [
     {
         'This' : 'That'
