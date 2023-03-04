@@ -1,5 +1,12 @@
 # .gitlab-ci.yml
 
+# Define the cache settings for the pipeline
+cache:
+  key: "$CI_COMMIT_REF_SLUG"
+  paths:
+    - .venv/
+    - ~/.cache/pip/
+
 # Define the stages that the pipeline will go through
 stages:
   - build
