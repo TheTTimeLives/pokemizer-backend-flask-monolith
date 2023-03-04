@@ -1,0 +1,40 @@
+# .gitlab-ci.yml
+
+# Define the stages that the pipeline will go through
+stages:
+  - build
+  - test
+  - deploy
+
+# Define the jobs that will run in each stage
+build:
+  stage: build
+  image: python:3.8
+  script:
+    - pip install -r requirements.txt
+  artifacts:
+    paths:
+      - __init__.py
+      - app.py
+
+test:
+  stage: test
+  image: python:3.8
+  script:
+    - pip install -r requirements.txt
+    - pytest tests/
+  artifacts:
+    paths:
+      - tests/
+    when: always
+
+deploy:
+  stage: deploy
+  image: python:3.8
+  script:
+    - pip install -r requirements.txt
+    - pip install awscli
+    - aws s3 cp app.py s3://<your-bucket-name>/app.py
+  when: manual
+  only:
+    - main
